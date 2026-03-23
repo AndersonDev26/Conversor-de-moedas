@@ -8,8 +8,8 @@
 
         console.log(currencyselect.value)
 
-        const dolartoday = 5.2
-        const eurotoday = 6.2
+        const dolartoday = 5.2836
+        const eurotoday = 6.1243
 
         
 
