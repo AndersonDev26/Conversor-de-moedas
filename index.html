@@ -5,53 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="./assets/icons8-câmbio-monetário-16.png">
-   
+    <link rel="icon" href="./assets/favicon.png">
+
     <title> ConversorJS </title>
 </head>
 <body>
 
-    <img class="logo" src="./assets/logo.gif.gif" alt="">
+    <img class="logo" src="./assets/logo (1).png" alt="ConversorJS">
 
     <main>
         <label>
             Converter <b>De</b>
-            <select>
-                <option> R$ Real brasileiro </option>
+            <select class="from-select">
+                <option value="real"> R$ Real brasileiro </option>
+                <option value="dolar"> US$ Dólar americano </option>
+                <option value="euro"> € Euro </option>
             </select>
         </label>
+
+        <button class="swap-button" id="swap-button" type="button" aria-label="Inverter moedas" title="Inverter moedas">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 8h15M15 4l4 4-4 4"/>
+                <path d="M20 16H5M9 12l-4 4 4 4"/>
+            </svg>
+        </button>
 
         <label>
             Converter <b>Para</b>
             <select class="currency-select">
-            <option value="dolar"> US$ Dólar americano</option>
-            <option value="euro"> € Euro </option>
-        </select>
+                <option value="dolar"> US$ Dólar americano </option>
+                <option value="euro"> € Euro </option>
+                <option value="real"> R$ Real brasileiro </option>
+            </select>
         </label>
 
         <label>
-           <strong>Valor</strong> 
-            <input class="input-curency" placeholder="R$ 10.000,00">
+            <strong>Valor</strong>
+            <input class="input-curency" placeholder="R$ 10.000,00" inputmode="numeric" autocomplete="off">
         </label>
 
         <button class="convert-button"> Converter </button>
 
         <section>
             <div class="currency-box">
-                <img class="brasil" src="./assets/brasil (3).png" alt="brasil.logo">
-                <p class="currency">Real</p>
+                <img id="from-flag" src="./assets/brasil (3).png" alt="">
+                <p class="currency" id="from-name">Real</p>
                 <p class="currency-value-to-convert">R$ 0,00</p>
             </div>
 
             <img class="seta" src="./assets/Vector (2).png" alt="seta.logo">
 
             <div class="currency-box">
-                <img class="usa" src="./assets/usa.png" alt="eua.logo">
+                <img id="to-flag" src="./assets/usa.png" alt="">
                 <p class="currency" id="currency-name">Dólar</p>
-                <p class="currency-value">US$ 0.0</p>
+                <p class="currency-value">US$ 0,00</p>
             </div>
         </section>
+
+        <p class="rate-info">
+            <strong id="rate-text"></strong>
+            <span id="rate-source"></span>
+        </p>
     </main>
-     <script src="./scripts.js" ></script>
+
+    <script src="./scripts.js"></script>
 </body>
 </html>
